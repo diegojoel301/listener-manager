@@ -1,0 +1,14 @@
+[Unit]
+Description=Python App Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python3 /root/listener-python/app.py
+Restart=on-failure
+# Otras configuraciones de reinicio pueden incluir: always, on-abort, etc
+# RestartSec=10s podría añadirse para esperar antes de reiniciar
+
+[Install]
+WantedBy=multi-user.target
